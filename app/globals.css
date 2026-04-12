@@ -319,28 +319,27 @@ section { padding: 120px 48px; }
 .card-visual { position: absolute; inset: 0; transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
 .project-card:hover .card-visual { transform: scale(1.04); }
 
-/* Card preview image - sits in upper right, fully visible, consistent size */
+/* Card preview image - full PNG, no crop, no radius, no shadow */
 .card-preview-img {
   position: absolute;
-  right: 24px;
-  top: 24px;
-  width: 52%;
-  height: 62%;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 8px;
+  right: 20px;
+  top: 20px;
+  width: 55%;
+  height: 70%;
+  object-fit: contain;
+  object-position: right top;
+  border-radius: 0;
+  box-shadow: none;
   opacity: 1;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease;
   pointer-events: none;
   z-index: 1;
 }
 .project-card:hover .card-preview-img {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
 }
 .card-preview-img.light-img {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  box-shadow: none;
 }
 
 .card-mano { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
