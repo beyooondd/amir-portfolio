@@ -250,7 +250,7 @@ export default function Portfolio() {
               <img
                 src={`/${p.id}.png`}
                 alt={p.title}
-                className={`card-preview-img${p.theme === 'light' ? ' light-img' : ''}`}
+                className={`card-preview-img${p.theme === 'light' ? ' light-img' : ''}${p.id === 'mano' || p.id === 'chamomile' ? ` img-${p.id}` : ''}`}
                 onError={e => e.target.style.display='none'}
               />
               <div className="card-inner">

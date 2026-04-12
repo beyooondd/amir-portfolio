@@ -341,6 +341,14 @@ section { padding: 120px 48px; }
 .card-preview-img.light-img {
   box-shadow: none;
 }
+/* Mano and Chamomile — bigger */
+.card-preview-img.img-mano,
+.card-preview-img.img-chamomile {
+  width: 70%;
+  height: 85%;
+  top: 10px;
+  right: 10px;
+}
 
 .card-mano { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
 .card-deepsurf { background: linear-gradient(135deg, #1a0a00 0%, #2d1200 50%, #ff6b35 100%); }
