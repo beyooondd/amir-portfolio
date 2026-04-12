@@ -29,7 +29,7 @@ const projects = [
     tag: 'Product · Web3',
     descKey: 'chamomile_desc',
     year: '2025–2026',
-    theme: 'light',
+    theme: 'dark',
     bg: 'card-chamomile',
     url: 'https://www.figma.com/design/xpMx84yywnISEbXcw2Gyb0/Chamomile--CHE-?node-id=0-1&p=f&t=rAyB57zoeyPdR8hG-0',
   },
@@ -62,6 +62,26 @@ const projects = [
     theme: 'dark',
     bg: 'card-lookie',
     url: 'https://www.figma.com/design/qwuP7QoMPsIrGsUsQ2rt4n/Lookie-lookie?node-id=0-1&p=f&t=hGa0QYAejWGb48AQ-0',
+  },
+  {
+    id: 'tera',
+    title: 'Tera',
+    tag: 'Product · Web3',
+    descKey: 'tera_desc',
+    year: '2025',
+    theme: 'dark',
+    bg: 'card-tera',
+    url: 'https://www.figma.com/design/U9NSVE5IslQYbuWdLJjLVj/Tera?node-id=0-1&p=f&t=q6jSDJW1a4l7M3oD-0',
+  },
+  {
+    id: 'rams',
+    title: 'Rams Studio',
+    tag: 'Brand · Web',
+    descKey: 'rams_desc',
+    year: '2024–2026',
+    theme: 'dark',
+    bg: 'card-rams',
+    url: 'https://rams.ae/',
   },
 ]
 
@@ -217,14 +237,6 @@ export default function Portfolio() {
           <h2 className="work-title">
             {t.work_title_1} <em>{t.work_title_2}</em><br />{t.work_title_3}
           </h2>
-          <div className="work-filter">
-            {['all','product','web','brand'].map(f => (
-              <button key={f} className={`filter-btn${f === 'all' ? ' active' : ''}`}
-                onMouseEnter={addHover} onMouseLeave={removeHover}>
-                {t[`filter_${f}`]}
-              </button>
-            ))}
-          </div>
         </div>
         <div className="projects-grid">
           {projects.map((p, i) => (

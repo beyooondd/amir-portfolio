@@ -63,8 +63,8 @@ nav {
 }
 .nav-logo {
   font-family: var(--serif);
-  font-size: 18px;
-  letter-spacing: -0.01em;
+  font-size: 36px;
+  letter-spacing: -0.02em;
   color: var(--black);
   text-decoration: none;
   opacity: 0;
@@ -302,6 +302,8 @@ section { padding: 120px 48px; }
 .project-card:nth-child(4) { grid-column: span 8; }
 .project-card:nth-child(5) { grid-column: span 6; }
 .project-card:nth-child(6) { grid-column: span 6; }
+.project-card:nth-child(7) { grid-column: span 5; }
+.project-card:nth-child(8) { grid-column: span 7; }
 
 .card-inner {
   position: relative;
@@ -319,10 +321,12 @@ section { padding: 120px 48px; }
 
 .card-mano { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
 .card-deepsurf { background: linear-gradient(135deg, #1a0a00 0%, #2d1200 50%, #ff6b35 100%); }
-.card-chamomile { background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%); }
+.card-chamomile { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); }
 .card-mind { background: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%); }
 .card-brickyard { background: linear-gradient(135deg, #1a1008 0%, #2d1e0a 100%); }
 .card-lookie { background: linear-gradient(135deg, #2d1a00 0%, #8b4513 50%, #d2691e 100%); }
+.card-tera { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f6feb 100%); }
+.card-rams { background: linear-gradient(135deg, #111111 0%, #222222 100%); }
 
 .card-grid-lines {
   position: absolute; inset: 0; opacity: 0.05;
