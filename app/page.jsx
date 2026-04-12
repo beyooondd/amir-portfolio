@@ -247,6 +247,12 @@ export default function Portfolio() {
                 <div className="card-grid-lines" />
                 {p.theme === 'dark' && <div className="card-deco" />}
               </div>
+              <img
+                src={`/${p.id}.png`}
+                alt={p.title}
+                className={`card-preview-img${p.theme === 'light' ? ' light-img' : ''}`}
+                onError={e => e.target.style.display='none'}
+              />
               <div className="card-inner">
                 <div className={`card-arrow ${p.theme}`}>↗</div>
                 <div className="card-content">

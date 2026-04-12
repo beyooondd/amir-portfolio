@@ -319,6 +319,34 @@ section { padding: 120px 48px; }
 .card-visual { position: absolute; inset: 0; transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
 .project-card:hover .card-visual { transform: scale(1.04); }
 
+/* Card preview image - sits in upper/center area, doesn't cover text */
+.card-preview-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65%;
+  height: 75%;
+  object-fit: cover;
+  object-position: center top;
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 90%),
+              linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 30%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 90%),
+                      linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 30%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  opacity: 0.55;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.project-card:hover .card-preview-img { opacity: 0.7; }
+
+/* Light cards - darker image blend */
+.card-preview-img.light-img {
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
 .card-mano { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
 .card-deepsurf { background: linear-gradient(135deg, #1a0a00 0%, #2d1200 50%, #ff6b35 100%); }
 .card-chamomile { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); }
