@@ -86,6 +86,26 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--black); }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.35s forwards;
+}
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-social-link {
+  color: var(--gray-400);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.nav-social-link:hover { color: var(--black); }
 .lang-switcher {
   display: flex;
   align-items: center;
