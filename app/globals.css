@@ -308,7 +308,7 @@ section { padding: 120px 48px; }
 .card-inner {
   position: relative;
   width: 100%; height: 100%;
-  min-height: 380px;
+  min-height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -319,32 +319,28 @@ section { padding: 120px 48px; }
 .card-visual { position: absolute; inset: 0; transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
 .project-card:hover .card-visual { transform: scale(1.04); }
 
-/* Card preview image - sits in upper/center area, doesn't cover text */
+/* Card preview image - sits in upper right, fully visible, consistent size */
 .card-preview-img {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 65%;
-  height: 75%;
+  right: 24px;
+  top: 24px;
+  width: 52%;
+  height: 62%;
   object-fit: cover;
   object-position: center top;
-  mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 90%),
-              linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 30%);
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 90%),
-                      linear-gradient(to top, transparent 0%, rgba(0,0,0,1) 30%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-  opacity: 0.55;
-  transition: opacity 0.4s ease;
+  border-radius: 8px;
+  opacity: 1;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   pointer-events: none;
   z-index: 1;
 }
-.project-card:hover .card-preview-img { opacity: 0.7; }
-
-/* Light cards - darker image blend */
+.project-card:hover .card-preview-img {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+}
 .card-preview-img.light-img {
-  opacity: 0.35;
-  mix-blend-mode: multiply;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
 }
 
 .card-mano { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
