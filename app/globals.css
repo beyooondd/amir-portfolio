@@ -540,18 +540,18 @@ body::after {
   background-size: 256px;
 }
 
-/* NAV — white text always (hero is dark photo), dark when scrolled */
+/* NAV — dark text (hero background is light) */
 nav { transition: background 0.3s, border-color 0.3s; }
-.nav-logo { color: var(--white) !important; transition: color 0.3s; }
-.nav-links a { color: rgba(255,255,255,0.75) !important; transition: color 0.2s; }
-.nav-links a:hover { color: var(--white) !important; }
-.nav-social-link { color: rgba(255,255,255,0.65) !important; transition: color 0.2s; }
-.nav-social-link:hover { color: var(--white) !important; }
-.lang-btn { color: rgba(255,255,255,0.55) !important; transition: color 0.2s; }
-.lang-btn.active { color: var(--white) !important; }
-.lang-sep { color: rgba(255,255,255,0.25) !important; }
+.nav-logo { color: var(--black) !important; transition: color 0.3s; }
+.nav-links a { color: var(--gray-600) !important; transition: color 0.2s; }
+.nav-links a:hover { color: var(--black) !important; }
+.nav-social-link { color: var(--gray-400) !important; transition: color 0.2s; }
+.nav-social-link:hover { color: var(--black) !important; }
+.lang-btn { color: var(--gray-400) !important; transition: color 0.2s; }
+.lang-btn.active { color: var(--black) !important; }
+.lang-sep { color: var(--gray-200) !important; }
 
-/* scrolled state - dark text */
+/* scrolled state - same dark text + glass bg */
 nav.scrolled .nav-logo { color: var(--black) !important; }
 nav.scrolled .nav-links a { color: var(--gray-600) !important; }
 nav.scrolled .nav-links a:hover { color: var(--black) !important; }
