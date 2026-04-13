@@ -128,7 +128,6 @@ export default function Portfolio() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
   // Custom cursor
   useEffect(() => {
     const cursor = document.getElementById('cursor')
@@ -166,8 +165,8 @@ export default function Portfolio() {
       <div id="cursor-ring" />
 
       {/* NAV */}
-      <nav style={{
-        background: navScrolled ? 'rgba(250,250,248,0.88)' : 'transparent',
+      <nav className={navScrolled ? 'scrolled' : ''} style={{
+        background: navScrolled ? 'rgba(250,250,248,0.92)' : 'transparent',
         backdropFilter: navScrolled ? 'blur(16px)' : 'none',
         borderBottom: navScrolled ? '1px solid rgba(0,0,0,0.06)' : 'none',
         transition: 'background 0.3s, border-color 0.3s',
