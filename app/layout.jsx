@@ -3,6 +3,9 @@ import './globals.css'
 export const metadata = {
   title: 'Amir Rzaev — Product & UX/UI Designer',
   description: 'UX/UI and Product Designer with 4+ years of experience in crypto, Web3, branding, and digital products.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({ children }) {
