@@ -179,11 +179,11 @@ section { padding: 120px 48px; }
 .project-card:hover .card-btns { opacity: 1; transform: translateY(0); pointer-events: all; }
 .card-btn {
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 100px;
   cursor: none;
   transition: all 0.2s;
@@ -198,6 +198,11 @@ section { padding: 120px 48px; }
 .card-btn.light:hover { background: var(--black); color: var(--white); }
 .card-btn-site.dark { background: rgba(255,255,255,0.18); }
 .card-btn-site.dark:hover { background: #fff; color: var(--black); }
+
+/* Card desc — always visible */
+.card-desc { font-size: 13px; line-height: 1.5; }
+.card-desc.dark { color: rgba(255,255,255,0.75); }
+.card-desc.light { color: var(--gray-600); }
 
 /* Exp icons */
 .exp-icon-wrap { width: 48px; height: 48px; border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 16px; }
