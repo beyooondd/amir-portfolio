@@ -132,6 +132,7 @@ export default function Portfolio() {
 
       {/* HERO */}
       <section className="hero">
+        <div className="hero-dots" />
         <div className="hero-bg-line" />
         <div className="hero-counter">Product & UX Designer — 2026</div>
         <div className="hero-photo">
