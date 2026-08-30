@@ -4,11 +4,11 @@ import { translations } from './translations'
 
 const projects = [
   { id: 'mano', title: 'Mano Labs', tag: 'Product · Mobile', descKey: 'mano_desc', year: '2024', theme: 'dark', bg: 'card-mano', url: 'https://www.figma.com/design/dJPG4zVZV6xaBMd7Pge7Ri/Mano-App-Design?node-id=0-1&t=yfox9Z7eA2t4XXdj-1' },
-  { id: 'deepsurf', title: 'Deepsurf', tag: 'Product · Dashboard', descKey: 'deepsurf_desc', year: '2025', theme: 'dark', bg: 'card-deepsurf', url: 'https://www.figma.com/design/IHlC0sJwMECBK7KwzozlhM/Deepsurf?node-id=1-14686&p=f&t=WaCGrwRcWZzPNMB3-0' },
-  { id: 'chamomile', title: 'Chamomile', tag: 'Product · Web3', descKey: 'chamomile_desc', year: '2025–2026', theme: 'dark', bg: 'card-chamomile', url: 'https://www.figma.com/design/xpMx84yywnISEbXcw2Gyb0/Chamomile--CHE-?node-id=0-1&p=f&t=rAyB57zoeyPdR8hG-0' },
+  { id: 'deepsurf', title: 'Deepsurf', tag: 'Product · Dashboard', descKey: 'deepsurf_desc', year: '2025', theme: 'dark', bg: 'card-deepsurf', url: 'https://www.figma.com/design/IHlC0sJwMECBK7KwzozlhM/Deepsurf?node-id=1-14686&p=f&t=WaCGrwRcWZzPNMB3-0', siteUrl: 'https://deepsurf.io' },
+  { id: 'chamomile', title: 'Chamomile', tag: 'Product · Web3', descKey: 'chamomile_desc', year: '2025–2026', theme: 'dark', bg: 'card-chamomile', url: 'https://www.figma.com/design/xpMx84yywnISEbXcw2Gyb0/Chamomile--CHE-?node-id=0-1&p=f&t=rAyB57zoeyPdR8hG-0', siteUrl: 'https://chamomile.fund' },
   { id: 'mind', title: 'The Mind', tag: 'Brand · Web', descKey: 'mind_desc', year: '2025', theme: 'light', bg: 'card-mind', url: 'https://www.figma.com/design/b6G4IehEBPe166My5csKPv/The-Mind-Group?node-id=76-211&t=DCtcKGvVFBM4O2OG-0' },
-  { id: 'assymetric', title: 'Assymetric', tag: 'Product · Crypto', descKey: 'assymetric_desc', year: '2025', theme: 'dark', bg: 'card-assymetric', url: 'https://www.figma.com' },
-  { id: 'holduu', title: 'Holduu', tag: 'Brand · Travel', descKey: 'holduu_desc', year: '2025', theme: 'dark', bg: 'card-holduu', url: 'https://www.figma.com' },
+  { id: 'assymetric', title: 'Assymetric', tag: 'Product · Crypto', descKey: 'assymetric_desc', year: '2025', theme: 'dark', bg: 'card-assymetric', url: 'https://www.figma.com/design/h1RJmF2jOYoChrKXLtjF12/Assymetric?node-id=0-1&t=83v24pM8n97KvktZ-1' },
+  { id: 'holduu', title: 'Holduu', tag: 'Brand · Travel', descKey: 'holduu_desc', year: '2025', theme: 'dark', bg: 'card-holduu', url: 'https://www.figma.com/design/EFMQAgSjmPUU4r92JhVogX/Holduu-Presentation-and-UI-Kit?node-id=0-1&t=t1uIbugOzXZs2k9V-1' },
   { id: 'brickyard', title: 'Brickyard', tag: 'Brand · Identity', descKey: 'brickyard_desc', year: '2024', theme: 'dark', bg: 'card-brickyard', url: 'https://www.figma.com/design/70UA3YsYqMfLqWrhXWaIQi/Brickyard?node-id=0-1&p=f&t=dhafJClpbUwO2Kz5-0' },
   { id: 'lookie', title: 'Lookie Lookie', tag: 'Brand · Packaging', descKey: 'lookie_desc', year: '2024', theme: 'dark', bg: 'card-lookie', url: 'https://www.figma.com/design/qwuP7QoMPsIrGsUsQ2rt4n/Lookie-lookie?node-id=0-1&p=f&t=hGa0QYAejWGb48AQ-0' },
   { id: 'tera', title: 'Tera', tag: 'Product · Sports', descKey: 'tera_desc', year: '2025', theme: 'dark', bg: 'card-tera', url: 'https://www.figma.com/design/U9NSVE5IslQYbuWdLJjLVj/Tera?node-id=0-1&p=f&t=q6jSDJW1a4l7M3oD-0' },
@@ -172,7 +172,6 @@ export default function Portfolio() {
         <div className="projects-grid">
           {projects.map((p, i) => (
             <div key={p.id} className={`project-card reveal${i % 2 === 1 ? ' reveal-delay-1' : ''}`}
-              onClick={() => window.open(p.url, '_blank')}
               onMouseEnter={addHover} onMouseLeave={removeHover}>
               <div className={`card-visual ${p.bg}`}>
                 <div className="card-grid-lines" />
@@ -182,7 +181,17 @@ export default function Portfolio() {
                 className={`card-preview-img${p.theme === 'light' ? ' light-img' : ''}${p.id === 'mano' || p.id === 'chamomile' ? ` img-${p.id}` : ''}`}
                 onError={e => e.target.style.display='none'} />
               <div className="card-inner">
-                <div className={`card-arrow ${p.theme}`}>↗</div>
+                {/* Buttons top right */}
+                <div className="card-btns">
+                  <button className={`card-btn ${p.theme}`} onClick={e => { e.stopPropagation(); window.open(p.url, '_blank') }}>
+                    Figma ↗
+                  </button>
+                  {p.siteUrl && (
+                    <button className={`card-btn card-btn-site ${p.theme}`} onClick={e => { e.stopPropagation(); window.open(p.siteUrl, '_blank') }}>
+                      Website ↗
+                    </button>
+                  )}
+                </div>
                 <div className="card-content">
                   <span className={`card-tag ${p.theme}`}>{p.tag}</span>
                   <h3 className={`card-title ${p.theme}`}>{p.title}</h3>
@@ -244,15 +253,23 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* EXPERIENCE — redesigned */}
+      {/* EXPERIENCE — with icons */}
       <section className="experience" id="experience">
         <div className="section-label reveal">
           <span><span className="section-num">03</span> {t.section_exp}</span>
         </div>
         <div className="exp-list">
-          {[1,2,3,4].map(n => (
+          {[
+            { n: 1, icon: '/wizards-icon.png', iconBg: '#1a0a2e' },
+            { n: 2, icon: '/chamomile-icon.png', iconBg: '#000' },
+            { n: 3, icon: '/mano-icon.png', iconBg: '#1a6fff' },
+            { n: 4, icon: '/kwork-icon.png', iconBg: '#2d2d2d' },
+          ].map(({ n, icon, iconBg }) => (
             <div key={n} className="exp-item reveal" onMouseEnter={addHover} onMouseLeave={removeHover}>
               <div className="exp-left">
+                <div className="exp-icon-wrap" style={{ background: iconBg }}>
+                  <img src={icon} alt="" className="exp-icon" onError={e => e.target.style.display='none'} />
+                </div>
                 <div className="exp-period">{t[`exp${n}_period`]}</div>
                 <span className="exp-badge">{t[`exp${n}_badge`]}</span>
               </div>
